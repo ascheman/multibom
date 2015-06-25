@@ -9,6 +9,7 @@
         <module>bom1</module>
         <module>bom2</module>
         <module>testboms</module>
+        <module>bom3</module>
     </modules>
 
     <build>
