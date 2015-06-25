@@ -1,0 +1,17 @@
+= MultiBoms
+
+This is just a small https://maven.apache.org/[Maven] example to play around 
+with so called https://en.wikipedia.org/wiki/Bill_of_materials[Bill-of-materials] 
+(in Maven also known as https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies[importing dependencies]).
+
+== Usage
+
+You may simply install it by calling [userinput]#mvn install#. But is much more
+interesting to look into the provided POM files:
+
+* link:bom1/pom.xml[bom1] just has a dependencyManagement section which points to some Spring 
+  libraries - which dependencies you choose is totally unimportant here.
+* link:bom2/pom.xml[bom2] imports bom1 in its own dependencyManagement thereby inheriting
+  the settings of that POM.
+* link:testboms/pom.xml[testboms] finally imports the dependencyManagement of bom2 but also gets
+  the dependencyManagement of bom1. 
